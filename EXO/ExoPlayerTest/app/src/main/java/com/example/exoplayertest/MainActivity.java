@@ -18,6 +18,7 @@ import com.google.android.exoplayer2.util.EventLogger;
 
 import java.io.File;
 
+/* 这个分支用于测试DASH流 */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private SimpleExoPlayer mPlayer;
