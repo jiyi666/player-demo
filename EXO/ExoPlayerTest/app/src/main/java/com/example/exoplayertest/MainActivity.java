@@ -76,16 +76,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initPlayer(){
         mPlayer = new SimpleExoPlayer.Builder(this).build();
         mPlayerView.setPlayer(mPlayer);
-        /* 本地文件存放路径：/sdcard/Android/data/com.example.exoplayertest/files/ */
-        Uri testUri = getMediaFileUri(this,"gangganghao.mp4");
-        Uri testUri1 = getMediaFileUri(this,"sudi.mp4");
+        /* 网上获取的DASH流测试地址 */
+        String testUri = "http://www-itec.uni-klu.ac.at/ftp/datasets/mmsys12/BigBuckBunny/MPDs/BigBuckBunnyNonSeg_2s_isoffmain_DIS_23009_1_v_2_1c2_2011_08_30.mpd";
+        String testUri1 = "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd";
         Log.d("jiyi", "testUri：" + testUri + ", testUri1:" + testUri1);
         // Build the media item.
         MediaItem firstLocalMediaItem = MediaItem.fromUri(testUri);
         MediaItem secondLocalMediaItem = MediaItem.fromUri(testUri1);
         // Set the media item to be played.
         mPlayer.addMediaItem(firstLocalMediaItem);
-        mPlayer.addMediaItem(secondLocalMediaItem);
+        //mPlayer.addMediaItem(secondLocalMediaItem);
         /* 设置循环模式 */
         mPlayer.setRepeatMode(mPlayer.REPEAT_MODE_ALL);
         /* 注册listener */
