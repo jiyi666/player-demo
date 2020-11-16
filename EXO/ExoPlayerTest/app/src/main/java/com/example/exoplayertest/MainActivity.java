@@ -18,7 +18,7 @@ import com.google.android.exoplayer2.util.EventLogger;
 
 import java.io.File;
 
-/* 这个分支用于测试DASH流 */
+/* 这个分支用于测试HLS流 */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private SimpleExoPlayer mPlayer;
@@ -76,9 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initPlayer(){
         mPlayer = new SimpleExoPlayer.Builder(this).build();
         mPlayerView.setPlayer(mPlayer);
-        /* 网上获取的DASH流测试地址 */
-        String testUri = "http://www-itec.uni-klu.ac.at/ftp/datasets/mmsys12/BigBuckBunny/MPDs/BigBuckBunnyNonSeg_2s_isoffmain_DIS_23009_1_v_2_1c2_2011_08_30.mpd";
-        String testUri1 = "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd";
+        /* 网上获取的HLS流测试地址 */
+        String testUri = "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8";
+        String testUri1 = "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8";
         Log.d("jiyi", "testUri：" + testUri + ", testUri1:" + testUri1);
         // Build the media item.
         MediaItem firstLocalMediaItem = MediaItem.fromUri(testUri);
