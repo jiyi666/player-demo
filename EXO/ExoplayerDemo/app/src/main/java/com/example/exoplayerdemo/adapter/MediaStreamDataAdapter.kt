@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.exoplayerdemo.R
 import com.example.exoplayerdemo.activity.MainActivity
+import com.example.exoplayerdemo.activity.MainActivity.Companion.STARTDETAILACTIVITY
 import com.example.exoplayerdemo.common.MediaStream
 
 /** RecyclerView的适配器 */
@@ -42,7 +43,11 @@ class MediaStreamDataAdapter(list : ArrayList<MediaStream>) :
             Toast.makeText(parent.context, "you click what?",
                 Toast.LENGTH_SHORT).show()
         }
-
+        /* 播放菜单点击页面 */
+        viewHolder.streamDescription.setOnClickListener {
+            val position = viewHolder.adapterPosition
+            MainActivity.mainActivityTodo(STARTDETAILACTIVITY, mediaStreamDataList[position].streamName)  //跳转去MainActivity执行相关操作
+        }
         /**
          *  长按监听：删除item
          */
