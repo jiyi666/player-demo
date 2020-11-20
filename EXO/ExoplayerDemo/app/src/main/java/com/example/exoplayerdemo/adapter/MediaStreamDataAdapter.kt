@@ -46,7 +46,7 @@ class MediaStreamDataAdapter(list : ArrayList<MediaStream>) :
         /* 播放菜单点击页面 */
         viewHolder.streamDescription.setOnClickListener {
             val position = viewHolder.adapterPosition
-            MainActivity.mainActivityTodo(STARTDETAILACTIVITY, mediaStreamDataList[position].streamName)  //跳转去MainActivity执行相关操作
+            MainActivity.mainActivityTodo(STARTDETAILACTIVITY, mediaStreamDataList[position].streamPath)  //跳转去MainActivity执行相关操作
         }
         /**
          *  长按监听：删除item
