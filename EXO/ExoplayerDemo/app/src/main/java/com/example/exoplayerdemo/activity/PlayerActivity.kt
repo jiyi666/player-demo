@@ -44,7 +44,6 @@ open class PlayerActivity : AppCompatActivity() {
         }
 
         mPlayer = SimpleExoPlayer.Builder(this).build()
-        mPlayerView!!.player = mPlayer
 
         // Build the media item.
         val firstLocalMediaItem = MediaItem.fromUri(playUri)
@@ -57,9 +56,11 @@ open class PlayerActivity : AppCompatActivity() {
         trackSelector = DefaultTrackSelector( /* context= */this)
         trackSelector!!.parameters = trackSelectorParameters!!
         mPlayer!!.addAnalyticsListener(EventLogger(trackSelector))
+
+        mPlayer!!.playWhenReady = true
+
+        mPlayerView!!.player = mPlayer
         // Prepare the player.
         mPlayer!!.prepare()
-        // Start the playback.
-        mPlayer!!.play()
     }
 }
