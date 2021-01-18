@@ -57,7 +57,7 @@ class MediaStreamDataAdapter(list : ArrayList<MediaStream>) :
             MainActivity.mainActivityTodo(
                 MainActivity.HANDLELONGCLIECK,
                 mediaStreamDataList[position].streamName)
-            /* 在ArrayList中移除此股 */
+            /* 在ArrayList中移除此码流 */
             mediaStreamDataList.remove(mediaStreamDataList[position])
             /* 通知移除该item */
             notifyItemRemoved(position)

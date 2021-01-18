@@ -39,7 +39,7 @@ class MainActivity : BaseActivity() {
             /* 创建数据库 */
             mediaStreamDatabase.create()
             /*
-             * 初始化stock数据
+             * 初始化MediaStream数据
              */
             initMediaStream()
             /* 添加数据 */
@@ -111,7 +111,7 @@ class MainActivity : BaseActivity() {
                 }
                 /* 处理长按删除item事件 */
                 HANDLELONGCLIECK -> {
-                    Log.d("jiyi", "streamName:$targetStr")
+                    Log.d("ExoTest", "streamName:$targetStr")
                     //TODO:
                 }
             }
